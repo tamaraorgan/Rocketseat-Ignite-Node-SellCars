@@ -12,7 +12,7 @@ class Category {
       Vai ajudar a não criar ids quando chamar o método put para fazer updates.
    */
    constructor() {
-      if (!this.id) {
+      if ( !this.id ) {
          this.id = uuidV4()
       }
    }
