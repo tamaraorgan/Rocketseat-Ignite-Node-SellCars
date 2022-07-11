@@ -1,4 +1,4 @@
-import { Category } from '../model/category.model'
+import { Category } from '../../model/category.model'
 
 //DTO -> Data Transfer object - pega os valores da rota e transfere para o controllers
 interface ICreateCategoryDTO {
@@ -6,10 +6,10 @@ interface ICreateCategoryDTO {
    description: string
 }
 
-interface ICategoriesControllers {
+interface ICategoriesController {
    findByName(name: string): Category
    list(): Category[]
    create({ name, description }: ICreateCategoryDTO): void
 }
 
-export { ICategoriesControllers, ICreateCategoryDTO }
+export { ICategoriesController, ICreateCategoryDTO }

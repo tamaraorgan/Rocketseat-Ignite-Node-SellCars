@@ -1,6 +1,6 @@
 import express from 'express'
-import { CategoriesController } from '../controllers/Categories.controllers'
-import { CreateCategoryService } from '../services/CreateCategory.service'
+import { CategoriesController } from '../modules/cars/controllers/categories/Categories.controller'
+import { CreateCategoryService } from '../modules/cars/services/CreateCategory.service'
 
 const categoriesRouter = express.Router()
 const categoriesController = new CategoriesController()

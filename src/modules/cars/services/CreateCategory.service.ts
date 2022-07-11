@@ -1,4 +1,4 @@
-import { ICategoriesControllers } from '../controllers/ICategories.controllers'
+import { ICategoriesController } from '../controllers/categories/ICategories.controller'
 
 interface IRequest {
    name: string
@@ -7,7 +7,7 @@ interface IRequest {
 // o service é responsável pela regra de negócio
 // Inversão de dependência - onde chama o controller para ter acesso ao  private categories: Category[] = []
 class CreateCategoryService {
-   constructor(private categoriesController: ICategoriesControllers) {}
+   constructor(private categoriesController: ICategoriesController) {}
 
    execute({ name, description }: IRequest) {
       const categoryAlreadyExists = this.categoriesController.findByName(name)

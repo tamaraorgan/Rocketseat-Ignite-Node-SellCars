@@ -1,7 +1,7 @@
-import { Category } from '../model/category.model'
-import { ICategoriesControllers, ICreateCategoryDTO } from './ICategories.controllers'
+import { Category } from '../../model/category.model'
+import { ICategoriesController, ICreateCategoryDTO } from './ICategories.controller'
 
-class CategoriesController implements ICategoriesControllers {
+class CategoriesController implements ICategoriesController {
    private categories: Category[] = []
 
    constructor() {
