@@ -1,14 +1,23 @@
 import { Specification } from '../../model/Specification.model'
 import {
-   ISpecificationsController,
+   ISpecificationsRepository,
    ICreateSpecificationDTO
-} from './ISpecifications.controller'
+} from './ISpecifications.repository'
 
-class SpecificationsController implements ISpecificationsController {
+class SpecificationsRepository implements ISpecificationsRepository {
    private specifications: Specification[] = []
 
-   constructor() {
+   private static INSTANCE: SpecificationsRepository
+
+   private constructor() {
       this.specifications = []
+   }
+
+   public static getInstance(): SpecificationsRepository {
+      if (!SpecificationsRepository.INSTANCE) {
+         SpecificationsRepository.INSTANCE = new SpecificationsRepository()
+      }
+      return SpecificationsRepository.INSTANCE
    }
 
    findByName(name: string) {
@@ -36,4 +45,4 @@ class SpecificationsController implements ISpecificationsController {
    }
 }
 
-export { SpecificationsController }
+export { SpecificationsRepository }
