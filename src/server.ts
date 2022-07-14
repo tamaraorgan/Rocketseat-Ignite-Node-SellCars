@@ -1,13 +1,12 @@
 import express from 'express'
+import { router } from './routes'
 
-import { categoriesRouter } from './routes/categories.routes'
-import { specificationsRouter } from './routes/specifications.routes'
 
 const app = express()
 
 app.use(express.json())
-app.use('/categories', categoriesRouter)
-app.use('/specifications', specificationsRouter)
+app.use(router)
+
 
 app.listen(3333, () => {
    console.log('ᕦ(ツ)ᕤ Server started at http://localhost:3333')
